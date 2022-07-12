@@ -21,4 +21,5 @@ public class AptSearchAppApplication {
     ApplicationRunner init(PlaceRepository repository) {
         return null;
     }
+
 }
