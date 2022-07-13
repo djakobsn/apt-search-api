@@ -1,4 +1,4 @@
-package no.jkbn.apt_search_app;
+package no.jkbn.apt_search_app.config;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
