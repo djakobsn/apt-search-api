@@ -7,10 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class OIDCUserPrincipal implements UserDetails {
-    private OIDCUser OIDCUser;
+    private final OIDCUser user;
 
     public OIDCUserPrincipal(OIDCUser OIDCUser) {
-        this.OIDCUser = OIDCUser;
+        this.user = OIDCUser;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class OIDCUserPrincipal implements UserDetails {
     }
 
     public String getUsername() {
-        return OIDCUser.getUsername();
+        return user.getUsername();
     }
 
     public boolean isAccountNonExpired() {

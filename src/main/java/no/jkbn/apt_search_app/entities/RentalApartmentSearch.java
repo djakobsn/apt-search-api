@@ -5,25 +5,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class OIDCUser {
-
-    public OIDCUser(String username) {
-        this.username = username;
-    }
-
+public class RentalApartmentSearch {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    private String username;
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private OIDCUser owner;
 
-    @OneToOne
-    private RentalApartmentSearch apartmentSearch;
+    @OneToMany
+    private Set<PlaceSearch> place_searches;
 
 }

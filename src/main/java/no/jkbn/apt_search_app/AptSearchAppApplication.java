@@ -1,16 +1,12 @@
 package no.jkbn.apt_search_app;
 
-import no.jkbn.apt_search_app.repositories.PlaceRepository;
+import no.jkbn.apt_search_app.repositories.RentalApartmentSearchRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan
-@EnableAutoConfiguration
+@SpringBootApplication
 public class AptSearchAppApplication {
 
     public static void main(String[] args) {
@@ -18,7 +14,7 @@ public class AptSearchAppApplication {
     }
 
     @Bean
-    ApplicationRunner init(PlaceRepository repository) {
+    ApplicationRunner init(RentalApartmentSearchRepository repository) {
         return null;
     }
 
