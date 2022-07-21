@@ -2,14 +2,14 @@ package no.jkbn.apt_search_app.security;
 
 import lombok.RequiredArgsConstructor;
 import no.jkbn.apt_search_app.entities.AptUser;
-import no.jkbn.apt_search_app.repositories.OIDCUserRepository;
+import no.jkbn.apt_search_app.repositories.AptUserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class OIDCUserService {
+public class AptUserService {
 
-    private final OIDCUserRepository userRepository;
+    private final AptUserRepository userRepository;
 
     public AptUser loadUserByUsername(String username) {
         AptUser user = userRepository.findByUsername(username);

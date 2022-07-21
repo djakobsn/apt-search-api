@@ -5,7 +5,7 @@ import no.jkbn.apt_search_app.entities.AptUser;
 import no.jkbn.apt_search_app.entities.PlaceSearch;
 import no.jkbn.apt_search_app.entities.RentalApartmentSearch;
 import no.jkbn.apt_search_app.repositories.RentalApartmentSearchRepository;
-import no.jkbn.apt_search_app.security.OIDCUserService;
+import no.jkbn.apt_search_app.security.AptUserService;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +18,10 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class RentalApartmentSearchController {
     private final RentalApartmentSearchRepository repository;
-    private final OIDCUserService users;
+    private final AptUserService users;
 
     @GetMapping("/configure")
-    RentalApartmentSearch getSearch(KeycloakAuthenticationToken keycloakAuthenticationToken) {
+        RentalApartmentSearch getSearch(KeycloakAuthenticationToken keycloakAuthenticationToken) {
         AptUser owner = users.loadUserByUsername(keycloakAuthenticationToken.getName());
         return repository.findFirstOneByOwnerId(owner.getId());
     }
