@@ -19,9 +19,9 @@ public class DetailedLocation {
 
     @ElementCollection(targetClass = HashSet.class)
     private Set<String> units = new HashSet<>();
+
     private String municipality;
 
     @Embedded
     private Location location;
-
 }

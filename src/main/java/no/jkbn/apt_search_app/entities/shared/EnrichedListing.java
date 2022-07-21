@@ -14,6 +14,8 @@ public class EnrichedListing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // We need this to be a Set<Location, Long> (wanted location, travel duration)
     private int shortestDuration;
 
     @OneToOne
@@ -21,4 +23,7 @@ public class EnrichedListing {
 
     @Embedded
     private DetailedLocation detailedLocation;
+
+    private Boolean ignored;
+    private Boolean starred;
 }
