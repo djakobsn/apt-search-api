@@ -13,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class RentalApartmentSearch {
 
-    public RentalApartmentSearch(OIDCUser owner, Set<PlaceSearch> place_searches) {
+    public RentalApartmentSearch(AptUser owner, Set<PlaceSearch> place_searches) {
         this.owner = owner;
         this.place_searches = place_searches;
     }
@@ -24,7 +24,7 @@ public class RentalApartmentSearch {
 
     @OneToOne
     @JoinColumn(name = "owner_id")
-    private OIDCUser owner;
+    private AptUser owner;
 
     @OneToMany(cascade=CascadeType.ALL)
     private Set<PlaceSearch> place_searches;

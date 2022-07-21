@@ -1,7 +1,7 @@
 package no.jkbn.apt_search_app.controllers;
 
 import lombok.RequiredArgsConstructor;
-import no.jkbn.apt_search_app.entities.OIDCUser;
+import no.jkbn.apt_search_app.entities.AptUser;
 import no.jkbn.apt_search_app.entities.PlaceSearch;
 import no.jkbn.apt_search_app.entities.RentalApartmentSearch;
 import no.jkbn.apt_search_app.repositories.RentalApartmentSearchRepository;
@@ -22,13 +22,13 @@ public class RentalApartmentSearchController {
 
     @GetMapping("/configure")
     RentalApartmentSearch getSearch(KeycloakAuthenticationToken keycloakAuthenticationToken) {
-        OIDCUser owner = users.loadUserByUsername(keycloakAuthenticationToken.getName());
+        AptUser owner = users.loadUserByUsername(keycloakAuthenticationToken.getName());
         return repository.findFirstOneByOwnerId(owner.getId());
     }
 
     @PostMapping("/configure")
     String saveSearch(KeycloakAuthenticationToken keycloakAuthenticationToken, @RequestBody Set<PlaceSearch> placeSearches) {
-        OIDCUser owner = users.loadUserByUsername(keycloakAuthenticationToken.getName());
+        AptUser owner = users.loadUserByUsername(keycloakAuthenticationToken.getName());
         RentalApartmentSearch search = new RentalApartmentSearch(owner, placeSearches);
         repository.save(search);
         return "Success";

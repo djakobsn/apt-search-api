@@ -1,15 +1,15 @@
 package no.jkbn.apt_search_app.security;
 
-import no.jkbn.apt_search_app.entities.OIDCUser;
+import no.jkbn.apt_search_app.entities.AptUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
 public class OIDCUserPrincipal implements UserDetails {
-    private final OIDCUser user;
+    private final AptUser user;
 
-    public OIDCUserPrincipal(OIDCUser OIDCUser) {
+    public OIDCUserPrincipal(AptUser OIDCUser) {
         this.user = OIDCUser;
     }
 

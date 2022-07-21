@@ -11,9 +11,9 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OIDCUser {
+public class AptUser {
 
-    public OIDCUser(String username) {
+    public AptUser(String username) {
         this.username = username;
     }
 

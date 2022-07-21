@@ -1,10 +1,10 @@
 package no.jkbn.apt_search_app.repositories;
 
-import no.jkbn.apt_search_app.entities.OIDCUser;
+import no.jkbn.apt_search_app.entities.AptUser;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface OIDCUserRepository extends CrudRepository<OIDCUser, Long> {
-    OIDCUser findByUsername(String username);
+public interface OIDCUserRepository extends CrudRepository<AptUser, Long> {
+    AptUser findByUsername(String username);
 
 }
