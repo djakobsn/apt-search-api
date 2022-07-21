@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,10 +20,6 @@ public class PlaceSearch {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private OIDCUser owner;
-
     private String name;
     private double latitude;
     private double longitude;
@@ -30,5 +27,5 @@ public class PlaceSearch {
     @ElementCollection(targetClass=Time.class)
     @CollectionTable(name = "travel_at", joinColumns = @JoinColumn(name = "place_search_id"))
     @Column(name = "time")
-    private Set<Time> travelAt = new HashSet<>();
+    private Set<Date> travelAt = new HashSet<>();
 }

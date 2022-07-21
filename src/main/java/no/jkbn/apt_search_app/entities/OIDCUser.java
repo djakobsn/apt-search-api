@@ -22,8 +22,4 @@ public class OIDCUser {
     private Integer id;
 
     private String username;
-
-    @OneToOne
-    private RentalApartmentSearch apartmentSearch;
-
 }

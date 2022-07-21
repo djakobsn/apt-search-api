@@ -18,6 +18,8 @@ public class OIDCUserPrincipal implements UserDetails {
         return null;
     }
 
+    public Integer getId() {return user.getId();}
+
     public String getPassword() {
         return null;
     }
